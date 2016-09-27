@@ -1,0 +1,33 @@
+<div ng-controller="PlaylistListController as lists" ng-init="lists.getMyPlaylists()">
+  <div id="playlists">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="playlist-heading">Select a playlist</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div ng-controller="TracksController as tracks">
+        <div class="col-sm-4 col-md-3">
+          <div class="playlist-item" ng-repeat="playlist in lists.playlists track by $index" ng-click="tracks.getPlaylistTracks(playlist); lists.selectPlaylist($index)">
+            <i class="fa fa-music" aria-hidden="true"></i>
+            <p class="playlist-name" ng-class="{'selected': lists.selectedIndex === $index}">{{ playlist.name }}</p>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-9">
+          <table ng-show="tracks.showPlaylistTracks">
+            <tr>
+              <th>Name</th>
+              <th>Artist</th>
+              <th>Popularity</th>
+            </tr>
+            <tr ng-repeat="track in tracks.tracks |  orderBy:tracks.sortType:tracks.sortReverse">
+              <td>{{ track.name }}</td>
+              <td>{{ track.artists[0].name }}</td>
+              <td>{{ track.popularity }}%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

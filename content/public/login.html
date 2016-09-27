@@ -1,0 +1,19 @@
+<div class="row center-contents" ng-controller="LoginController as login" ng-class="{'big-login': login.loggedIn === false}">
+  <div class="col-xs-12">
+    <div id="login" class="aligncenter" ng-if="login.showLogin">
+      <h1>Tracks By Popularity</h1>
+      <p class="topmargin20">See how much other people love your favourite tracks by ordering your Spotify playlists by popularity.</p>
+      <a href="/login" class="btn btn-primary topmargin20">LOG IN WITH SPOTIFY</a>
+    </div>
+    <div id="loggedin" ng-if="login.loggedIn">
+      <div id="user-profile">
+        <div class="circle-avatar" ng-style="{'background-image': 'url(' + login.user.images[0].url + ')'}"></div>
+        <!--<img class="userImg col-sm-3 img-circle" ng-src="{{login.user.images[0].url}}"/>-->
+        <div class="user-heading-container">
+          <p class="user-subheading">Logged in as</p>
+          <h1 class="user-heading margin0">{{ login.user.display_name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

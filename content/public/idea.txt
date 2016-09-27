@@ -1,0 +1,6 @@
+Spotify API
+
+Login 
+Get your playlists
+Select a playlist
+See tracks in playlist ranked in most played/popular order (not user, general)

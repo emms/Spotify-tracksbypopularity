@@ -1,0 +1,181 @@
+html {}
+
+body {
+  background-color: #000;
+  background-image: url('../img/spotify_bg1.jpg');
+  background-size: cover;
+  color: #fff;
+  min-height: 100%;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  color: #07d159;
+}
+
+a {
+  color: #07d159;
+}
+
+a:hover {
+  color: #22E065;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #1DB954;
+  border-color: #1DB954;
+  padding: 12px 25px;
+  border-radius: 25px;
+}
+
+.btn-primary:hover {
+  background-color: #22E065;
+  border-color: #22E065;
+}
+
+.center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.topmargin20 {
+  margin-top: 20px;
+}
+
+.margin0 {
+  margin: 0;
+}
+
+.createdby {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.links {
+  float: right;
+  padding: 5px;
+}
+
+.links * {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+.createdby p {
+  margin: 0;
+}
+
+.createdby-link {
+  padding: 0;
+  vertical-align: top;
+}
+
+.big-login {
+  height: 100vh;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 150px;
+  background-color: rgb(26, 26, 26);
+}
+
+td,
+th {
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  text-align: left;
+  padding: 11px;
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #999;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(20, 20, 20);
+}
+
+tr:hover {
+  background-color: rgb(60, 60, 60);
+}
+
+.playlist-item {
+  color: #999;
+}
+
+.playlist-name {
+  margin-left: -27px;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.playlist-name.selected {
+  color: #fff;
+  border-left: 3px solid #07d159;
+  padding-left: 27px;
+}
+
+#loggedin {
+  padding-top: 40px;
+}
+
+.user-heading-container {
+  display: inline-block;
+  margin: 15px 0 15px 15px;
+  vertical-align: top;
+}
+
+.user-subheading {
+  text-transform: uppercase;
+  color: #999;
+}
+
+.circle-avatar {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border-radius: 50%;
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+.playlist-heading {
+  margin: 30px 0 20px 0;
+}
+
+a .fa {
+  color: #fff;
+  padding: 0;
+  transition: color 0.5s;
+}
+
+a .fa:hover {
+  color: #07d159;
+}
+
+.bg {
+  background-color: #222;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
