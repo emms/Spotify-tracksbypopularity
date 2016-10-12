@@ -8,20 +8,27 @@
     <div class="row">
       <div ng-controller="TracksController as tracks">
         <div class="col-sm-4 col-md-3">
-          <div class="playlist-item" ng-repeat="playlist in lists.playlists track by $index" ng-click="tracks.getPlaylistTracks(playlist); lists.selectPlaylist($index)">
-            <i class="fa fa-music" aria-hidden="true"></i>
-            <p class="playlist-name" ng-class="{'selected': lists.selectedIndex === $index}">{{ playlist.name }}</p>
+          <div class="row margin0">
+            <div class="playlist-item" ng-repeat="playlist in lists.playlists track by $index" ng-click="tracks.getPlaylistTracks(playlist); lists.selectPlaylist($index)">
+              <i class="fa fa-music" aria-hidden="true"></i>
+              <p class="playlist-name" ng-class="{'selected': lists.selectedIndex === $index}">{{ playlist.name }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <img ng-src="{{ tracks.albumCoverSrc }}" class="coverart">
           </div>
         </div>
         <div class="col-sm-8 col-md-9">
-          <table>
+          <p class="included-in-faves hidden-xs" ng-show="tracks.showPlaylistTracks" ng-click="tracks.seeTop();">Click here to see which of the tracks on this playlist are included in your 50 most played tracks</p>
+          <table ng-show="tracks.showPlaylistTracks">
             <tr>
               <th>Name</th>
               <th>Artist</th>
               <th>Popularity</th>
             </tr>
-            <tr ng-repeat="track in tracks.tracks |  orderBy:tracks.sortType:tracks.sortReverse">
-              <td>{{ track.name }}</td>
+            <tr ng-repeat="track in tracks.tracks |  orderBy:tracks.sortType:tracks.sortReverse" ng-click="tracks.playTrack(track)">
+              <td><i class="fa fa-play-circle play-icon" ng-show="track.playing == false" aria-hidden="true"></i>
+                <i class="fa fa-pause-circle-o play-icon" ng-show="track.playing == true" aria-hidden="true"></i> {{ track.name }}</td>
               <td>{{ track.artists[0].name }}</td>
               <td>{{ track.popularity }}%</td>
             </tr>
