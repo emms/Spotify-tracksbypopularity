@@ -108,6 +108,7 @@ spotifyApp.controller('TracksController', ['$http', '$scope', 'UserDetailsServic
         var items = response.data.items;
         for (var i = 0; i < items.length; i++) {
           //console.log(items[i].track);
+          items[i].playing = false;
           self.ownPopular.push(items[i]);
         }
       }, function errorCallback(response) {
